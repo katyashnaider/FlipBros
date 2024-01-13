@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e23aef1d234341fbbaa56ab6afceaec8, type: 3}
-  m_Name: MainSettingsConfig
+  m_Script: {fileID: 11500000, guid: 813eabadd1b09a34a8da54f19c49764f, type: 3}
+  m_Name: CharactersConfig
   m_EditorClassIdentifier: 
-  _levelsConfig: {fileID: 11400000, guid: a175f257bf824e846a4cfff3334850b9, type: 2}
-  _charactersConfig: {fileID: 11400000, guid: 4caab24fce8b76c4eb7cb81744e2b8e6, type: 2}
+  _playerCharacterPrefab: {fileID: 4756565458815762107, guid: 8ec934edcbe6297428595d230ebb3739, type: 3}

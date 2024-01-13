@@ -17,7 +17,7 @@ namespace FlipBros
 
         private void Start()
         {
-            _game = new Game(_mainSettingsConfig.LevelsConfig);
+            _game = new Game(_mainSettingsConfig.LevelsConfig, _mainSettingsConfig.CharactersConfig);
             
             StartGame();
         }
