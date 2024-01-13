@@ -232,9 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1cd1e173f14469f8f40a74c9bfc1484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxPushForce: 20
-  _minDraggingDistance: 0.1
-  _rigidbodyPlayer: {fileID: 4756565458815762087, guid: 8ec934edcbe6297428595d230ebb3739, type: 3}
 --- !u!50 &2295668989286349367
 Rigidbody2D:
   serializedVersion: 4

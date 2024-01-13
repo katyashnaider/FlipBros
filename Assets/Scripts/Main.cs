@@ -7,19 +7,25 @@ namespace FlipBros
     public class Main : MonoBehaviour
     {
         [SerializeField] private MainSettingsConfig _mainSettingsConfig;
-        
+
         private Game _game;
 
         private void Awake()
         {
-            Level level = _mainSettingsConfig.LevelsConfig.DebugLevelPrefab;
         }
 
         private void Start()
         {
-            _game = new Game(_mainSettingsConfig.LevelsConfig, _mainSettingsConfig.CharactersConfig);
-            
+            _game = new Game(_mainSettingsConfig.LevelsConfig,
+                _mainSettingsConfig.CharactersConfig,
+                _mainSettingsConfig.CharacterPlayerConfig);
+
             StartGame();
+        }
+
+        private void Update()
+        {
+            _game.ThisUpdate();
         }
 
         public void StartGame()
