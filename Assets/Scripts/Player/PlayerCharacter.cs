@@ -8,26 +8,23 @@ namespace FlipBros.Player
     public class PlayerCharacter : MonoBehaviour
     {
         [SerializeField] private float _maxPushForce = 20f;
-        [SerializeField] private float _minDraggingDuration = 0.1f;
-        [SerializeField] private float _speedScale = 2f;
+        [SerializeField] private float _rotationForce = 10f;
+        [SerializeField] private float _gravity = -12f;
 
-        [SerializeField] private SpriteRenderer _arrowImage;
         [SerializeField] private Rigidbody2D _rigidbody;
         [SerializeField] private ArrowDirectionMoveView _arrowDirectionMoveView;
 
         private readonly CompositeDisposable _lifeCycleDisposable = new CompositeDisposable();
 
-        private Vector2 _startPosition;
-
         private float _startInputTime;
 
-        private float _currentPushForce;
         private IInput _input;
         private CharacterPlayerConfig _characterPlayerConfig;
 
-
         public void Construct(IInput input, CharacterPlayerConfig characterPlayerConfig)
         {
+            Physics2D.gravity = new Vector2(0, _gravity);
+
             _characterPlayerConfig = characterPlayerConfig;
             _input = input;
             _arrowDirectionMoveView.Construct(input, characterPlayerConfig);
@@ -61,6 +58,7 @@ namespace FlipBros.Player
             Vector2 releaseDirection = Vector2.up;
 
             _rigidbody.AddForce(releaseDirection * (currentPower * _maxPushForce), ForceMode2D.Impulse);
+            _rigidbody.AddTorque(_rotationForce, ForceMode2D.Impulse);
         }
 
 

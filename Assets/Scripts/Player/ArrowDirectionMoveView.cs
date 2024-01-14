@@ -24,6 +24,7 @@ namespace FlipBros.Player
         private void Update()
         {
             var isStartInputInThisFrame = IsStartInputInThisFrame();
+            
             if (isStartInputInThisFrame)
             {
                 _isRunMoveArrow = true;
@@ -33,7 +34,7 @@ namespace FlipBros.Player
             else if (LostInputInThisFrame())
             {
                 _isRunMoveArrow = false;
-                _arrowSlider.gameObject.SetActive(false);
+                //_arrowSlider.gameObject.SetActive(false);
             }
 
             if (_isRunMoveArrow)
@@ -41,6 +42,10 @@ namespace FlipBros.Player
                 var elapsedTime = Time.time - _dragStartTime;
                 var currentProgress = Mathf.Clamp01(elapsedTime / _characterPlayerConfig.DurationToMaxPower);
                 _arrowSlider.value = currentProgress;
+            }
+            else
+            {
+                _arrowSlider.value = 0;
             }
 
             bool IsStartInputInThisFrame()

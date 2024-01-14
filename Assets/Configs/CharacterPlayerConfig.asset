@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd69fe2225734f539a677a10b86bb2db, type: 3}
   m_Name: CharacterPlayerConfig
   m_EditorClassIdentifier: 
-  _durationToMaxPower: 2
+  _durationToMaxPower: 1.5
